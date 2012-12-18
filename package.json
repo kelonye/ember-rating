@@ -1,0 +1,11 @@
+{
+  "name": "ember-rating",
+  "version": "0.0.1",
+  "description": "Rating widget",
+  "license": "MIT",
+  "dependencies": {
+    "stylus": "*",
+    "coffee-script": "*",
+    "component": "*"
+  }
+}

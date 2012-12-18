@@ -1,0 +1,25 @@
+{
+  "name": "ember-rating",
+  "version": "0.0.1",
+  "repo": "kelonye/ember-rating",
+  "description": "Rating widget",
+  "license": "MIT",
+  "keywords": [
+    "rating",
+    "ui",
+    "ember",
+    "emberjs"
+  ],
+  "dependencies": {
+    "component/jquery": "*",
+    "kelonye/handlebars.js": "*",
+    "kelonye/ember.js": "*",
+    "kelonye/ember-select": "*"
+  },
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "style.css"
+  ]
+}
