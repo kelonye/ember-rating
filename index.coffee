@@ -1,6 +1,31 @@
 get = Em.get
 set = Em.set
 
+RatingItemView = Em.View.extend require "ember-select"
+
+  template: Em.Handlebars.compile ""
+
+  mouseEnter: ->
+
+    @_()
+
+  mouseLeave: ->
+
+    rating = get @, "parentView.actualRating"
+    set @, "parentView.rating", rating
+
+  click: ->
+
+    rating = get @, "parentView.rating"
+    set @, "parentView.actualRating", rating
+    @_()
+
+  # 
+  _: ->
+    content = get @, "content"
+    parentViewContent = get @, "parentView.content"
+    set @, "parentView.rating", (1 + parentViewContent.indexOf content)
+    
 module.exports = Em.CollectionView.extend
   
   size: 5
@@ -14,30 +39,8 @@ module.exports = Em.CollectionView.extend
     rating = get @, "rating"
     set @, "actualRating", rating
   
-  itemViewClass: require("ember-select").extend
+  itemViewClass: RatingItemView
 
-    template: Em.Handlebars.compile ""
-
-    mouseEnter: ->
-
-      @_()
-
-    mouseLeave: ->
-
-      rating = get @, "parentView.actualRating"
-      set @, "parentView.rating", rating
-
-    click: ->
-
-      rating = get @, "parentView.rating"
-      set @, "parentView.actualRating", rating
-      @_()
-
-    _: ->
-      content = get @, "content"
-      parentViewContent = get @, "parentView.content"
-      set @, "parentView.rating", (1 + parentViewContent.indexOf content)
-      
   classNames: [
     "component"
     "rating"
