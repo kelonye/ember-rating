@@ -1,7 +1,7 @@
 get = Em.get
 set = Em.set
 
-RatingItemView = Em.View.extend require "ember-select"
+RatingItemView = Em.View.extend require("ember-select"),
 
   template: Em.Handlebars.compile ""
 
