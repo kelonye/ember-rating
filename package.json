@@ -6,6 +6,7 @@
   "dependencies": {
     "stylus": "*",
     "coffee-script": "*",
-    "component": "*"
+    "component": "*",
+    "nib": "*"
   }
 }

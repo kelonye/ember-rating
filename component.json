@@ -17,9 +17,10 @@
     "kelonye/ember-select": "*"
   },
   "scripts": [
-    "index.js"
+    "index.js",
+    "lib/index.js"
   ],
   "styles": [
-    "style.css"
+    "lib/style.css"
   ]
 }
