@@ -3,16 +3,17 @@
 Usage
 ---
 
-See [demo](http://kelonye.github.com/ember-rating/example/index.html)
-
-javascript
-
-```
-App.RatingView = require("rating").extend({
+```javascript
+App.RatingView = require('rating').extend({
   size: 6,
   rating: 4
 });
 ```
+
+Example
+---
+
+    $ make example
 
 License
 ---

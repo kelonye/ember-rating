@@ -1,18 +1,14 @@
 {
   "name": "ember-rating",
-  "repo": "kelonye/ember-rating",
   "version": "0.0.1",
   "description": "Rating widget",
   "license": "MIT",
-  "keywords": [
-    "rating"
-  ],
   "dependencies": {
     "kelonye/ember": "*",
     "kelonye/ember-select": "*"
   },
+  "main": "lib/index.js",
   "scripts": [
-    "index.js",
     "lib/index.js"
   ],
   "styles": [

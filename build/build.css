@@ -1,4 +1,0 @@
-.component.rating{font-size:20px;list-style:none;}
-.component.rating li{float:left;color:#000;cursor:pointer;}
-.component.rating li:before{content:"☆"}
-.component.rating li.active:before{content:"★"}

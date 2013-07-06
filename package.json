@@ -4,9 +4,6 @@
   "description": "Rating widget",
   "license": "MIT",
   "dependencies": {
-    "stylus": "*",
-    "coffee-script": "*",
-    "component": "*",
-    "nib": "*"
+    "component-hooks": "*"
   }
 }

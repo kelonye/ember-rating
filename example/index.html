@@ -1,38 +1,40 @@
-<!DOCTYPE html><html><head><link href="../build/build.css" rel="stylesheet" media="screen"></head><body><script src="../build/build.js"></script><script type="text/javascript">
-(function() {
-  var Rating, compile, controller, view;
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='../public/public.css' rel='stylesheet' media='screen'>
+  </head>
+  <body>
+    <script src='../public/public.js'></script>
+    <script type='text/javascript'>
 
-  Rating = require('ember-rating');
+      var Rating = require('ember-rating');
+      var compile = Em.Handlebars.compile;
+      var controller = Em.Controller.create({
+        content: 2
+      });
+      var view = Rating.create({
+        rating: 3,
+        didInsertElement: function() {
+          this.updateContextRating.bind(this);
+          this.addObserver('rating', this.updateContextRating.bind(this));
+        },
+        updateContextRating: function() {
+          var rating;
+          rating = this.get('rating');
+          controller.set('content', rating);
+        }
+      });
 
-  compile = Em.Handlebars.compile;
+      view.appendTo('body');
 
-  controller = Em.Controller.create({
-    content: 2
-  });
+      view = Em.View.create({
+        tagName: 'h2',
+        context: controller,
+        template: compile('{{view.context.content}}')
+      });
 
-  view = Rating.create({
-    rating: 3,
-    didInsertElement: function() {
-      this.updateContextRating.bind(this);
-      return this.addObserver('rating', this.updateContextRating.bind(this));
-    },
-    updateContextRating: function() {
-      var rating;
+      view.appendTo('body');
 
-      rating = this.get('rating');
-      return controller.set('content', rating);
-    }
-  });
-
-  view.appendTo('body');
-
-  view = Em.View.create({
-    tagName: 'h2',
-    context: controller,
-    template: compile('{{view.context.content}}')
-  });
-
-  view.appendTo('body');
-
-}).call(this);
-</script></body></html>
+    </script>
+  </body>
+</html>
