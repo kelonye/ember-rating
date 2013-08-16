@@ -2,39 +2,38 @@
 <html>
   <head>
     <link href='../public/public.css' rel='stylesheet' media='screen'>
+    <style>
+    .component-rating{
+      list-style: none;
+      font-size: 20px;
+      float: left;
+      color: #444;
+      cursor: pointer;
+    }
+    </style>
   </head>
   <body>
     <script src='../public/public.js'></script>
+    <script data-template-name='index' type='text/x-handlebars'>
+      <ul>
+      {{#each controller}}
+      {{view App.RatingView contentBinding='this'}}
+      {{/each}}
+      </ul>
+    </script>
     <script type='text/javascript'>
-
-      var Rating = require('ember-rating');
-      var compile = Em.Handlebars.compile;
-      var controller = Em.Controller.create({
-        content: 2
-      });
-      var view = Rating.create({
-        rating: 3,
-        didInsertElement: function() {
-          this.updateContextRating.bind(this);
-          this.addObserver('rating', this.updateContextRating.bind(this));
+      var rating = require('ember-rating');
+      App = Em.Application.create();
+      App.RatingView = Em.View.extend(rating);
+      App.IndexRoute = Em.Route.extend({
+        model: function(){
+          return [1, 2, 3, 4, 5, 6, 7];
         },
-        updateContextRating: function() {
-          var rating;
-          rating = this.get('rating');
-          controller.set('content', rating);
+        setupController: function(controller, model){
+          this._super(controller, model);
+          controller.set('selected', 4);
         }
       });
-
-      view.appendTo('body');
-
-      view = Em.View.create({
-        tagName: 'h2',
-        context: controller,
-        template: compile('{{view.context.content}}')
-      });
-
-      view.appendTo('body');
-
     </script>
   </body>
 </html>

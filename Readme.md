@@ -1,14 +1,10 @@
 ![](https://dl.dropbox.com/u/30162278/ember-rating.png) 
- 
-Usage
+
+
+Install
 ---
 
-```javascript
-App.RatingView = require('rating').extend({
-  size: 6,
-  rating: 4
-});
-```
+    $ component install kelonye/ember-rating
 
 Example
 ---
