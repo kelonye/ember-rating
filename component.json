@@ -4,8 +4,8 @@
   "description": "Rating widget",
   "license": "MIT",
   "dependencies": {
-    "kelonye/ember": "*",
-    "kelonye/ember-select": "*"
+    "kelonye/ember": "1.0.0-rc6",
+    "kelonye/ember-select": "0.0.1"
   },
   "main": "lib/index.js",
   "scripts": [
