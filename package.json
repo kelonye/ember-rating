@@ -1,9 +1,7 @@
 {
   "name": "ember-rating",
-  "version": "0.0.1",
-  "description": "Rating widget",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
-    "component-hooks": "*"
+    "component-hooks": "0.2.5"
   }
 }

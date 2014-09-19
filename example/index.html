@@ -17,7 +17,7 @@
     <script data-template-name='index' type='text/x-handlebars'>
       <ul>
       {{#each controller}}
-      {{view App.RatingView contentBinding='this'}}
+      {{view App.RatingView value=this hovered=controller.hovered selected=controller.selected}}
       {{/each}}
       </ul>
     </script>
