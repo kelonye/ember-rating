@@ -2,6 +2,6 @@
   "name": "ember-rating",
   "private": true,
   "dependencies": {
-    "component-hooks": "0.2.5"
+    "component-hooks": "*"
   }
 }
