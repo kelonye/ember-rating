@@ -16,15 +16,18 @@
     <script src='../public/public.js'></script>
     <script data-template-name='index' type='text/x-handlebars'>
       <ul>
-      {{#each controller}}
-      {{view App.RatingView value=this hovered=controller.hovered selected=controller.selected}}
+      {{#each rate in controller}}
+      {{rating-widget value=rate hovered=controller.hovered selected=controller.selected}}
       {{/each}}
       </ul>
     </script>
     <script type='text/javascript'>
       var rating = require('ember-rating');
+
       App = Em.Application.create();
-      App.RatingView = Em.View.extend(rating);
+      
+      App.RatingWidgetComponent = Em.Component.extend(rating);
+
       App.IndexRoute = Em.Route.extend({
         model: function(){
           return [1, 2, 3, 4, 5, 6, 7];
